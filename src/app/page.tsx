@@ -1,17 +1,28 @@
 // import Image from "next/image";
-
+"use client";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import Gallery from "./components/Gallery";
+import Hero from "./components/Hero";
+import Navigation from "./components/Navigation";
+import Offerings from "./components/Offerings";
+import Testimonials from "./components/Testimonials";
+import Events from "./components/Events";
+import DoveAnimation from "./components/DoveAnimation";
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans ">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16   sm:items-start">
-        <div>
-          <h1 className="text-4xl font-bold text-zinc-800">Welcome to RCCG</h1>
-          <p className="text-zinc-600">
-            We are a community of believers dedicated to spreading the gospel
-            and serving our neighbors.
-          </p>
-        </div>
-      </main>
-    </div>
+    <>
+      <Navigation />
+      <Hero />
+      <DoveAnimation />
+      <About />
+      <Events />
+      <Testimonials />
+      <Gallery />
+      <Offerings />
+      <Contact />
+      <Footer />
+    </>
   );
 }
