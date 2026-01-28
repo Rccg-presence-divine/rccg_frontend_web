@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Calendar } from "./calendar";
+import { Calendar } from "../../components/ui/calendar";
 import { Badge } from "./badge";
 import { CalendarDays, MapPin, Clock, ChevronRight } from "lucide-react";
 import { format, isSameDay } from "date-fns";
@@ -25,7 +25,8 @@ const events: Event[] = [
     date: new Date(2026, 1, 15),
     time: "09h00 - 18h00",
     location: "Église RCCG Divine Presence",
-    description: "Grande convention annuelle avec des invités spéciaux. Venez vivre une expérience spirituelle transformatrice.",
+    description:
+      "Grande convention annuelle avec des invités spéciaux. Venez vivre une expérience spirituelle transformatrice.",
     type: "conference",
   },
   {
@@ -34,7 +35,8 @@ const events: Event[] = [
     date: new Date(2026, 1, 20),
     time: "21h00 - 05h00",
     location: "Église RCCG Divine Presence",
-    description: "Une nuit entière dédiée à la louange et à l'adoration. Venez célébrer la gloire de Dieu.",
+    description:
+      "Une nuit entière dédiée à la louange et à l'adoration. Venez célébrer la gloire de Dieu.",
     type: "priere",
   },
   {
@@ -43,7 +45,8 @@ const events: Event[] = [
     date: new Date(2026, 1, 25),
     time: "08h00 - 18h00",
     location: "Centre de retraite",
-    description: "Un week-end de retraite spirituelle pour les jeunes de l'église. Enseignements, jeux et communion fraternelle.",
+    description:
+      "Un week-end de retraite spirituelle pour les jeunes de l'église. Enseignements, jeux et communion fraternelle.",
     type: "conference",
   },
   {
@@ -52,7 +55,8 @@ const events: Event[] = [
     date: new Date(2026, 3, 5),
     time: "09h00 - 13h00",
     location: "Église RCCG Divine Presence",
-    description: "Célébration de la résurrection de notre Seigneur Jésus-Christ avec un culte spécial.",
+    description:
+      "Célébration de la résurrection de notre Seigneur Jésus-Christ avec un culte spécial.",
     type: "culte",
   },
   {
@@ -61,7 +65,8 @@ const events: Event[] = [
     date: new Date(2026, 2, 14),
     time: "14h00 - 18h00",
     location: "Église RCCG Divine Presence",
-    description: "Un séminaire enrichissant pour fortifier les mariages et les relations.",
+    description:
+      "Un séminaire enrichissant pour fortifier les mariages et les relations.",
     type: "conference",
   },
 ];
@@ -70,19 +75,22 @@ const announcements = [
   {
     id: 1,
     title: "Inscriptions École du Dimanche",
-    description: "Les inscriptions pour la nouvelle année de l'école du dimanche des enfants sont ouvertes.",
+    description:
+      "Les inscriptions pour la nouvelle année de l'école du dimanche des enfants sont ouvertes.",
     urgent: true,
   },
   {
     id: 2,
     title: "Chorale - Nouveaux membres",
-    description: "La chorale recrute de nouvelles voix. Contactez le responsable après le culte du dimanche.",
+    description:
+      "La chorale recrute de nouvelles voix. Contactez le responsable après le culte du dimanche.",
     urgent: false,
   },
   {
     id: 3,
     title: "Action sociale",
-    description: "Collecte de vêtements et denrées alimentaires pour les familles nécessiteuses. Apportez vos dons au secrétariat.",
+    description:
+      "Collecte de vêtements et denrées alimentaires pour les familles nécessiteuses. Apportez vos dons au secrétariat.",
     urgent: false,
   },
 ];
@@ -104,7 +112,9 @@ const typeLabels = {
 export default function Events() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(
+    new Date()
+  );
 
   const eventDates = events.map((e) => e.date);
   const selectedEvents = selectedDate
@@ -151,7 +161,7 @@ export default function Events() {
                   selected={selectedDate}
                   onSelect={setSelectedDate}
                   locale={fr}
-                  className="rounded-md"
+                  className="rounded-md w-full"
                   modifiers={{
                     hasEvent: eventDates,
                   }}
@@ -194,7 +204,10 @@ export default function Events() {
                           {announcement.title}
                         </h4>
                         {announcement.urgent && (
-                          <Badge variant="destructive" className="text-xs text-white ">
+                          <Badge
+                            variant="destructive"
+                            className="text-xs text-white "
+                          >
                             Urgent
                           </Badge>
                         )}
@@ -220,7 +233,8 @@ export default function Events() {
               <div className="mb-8">
                 <h3 className="font-display text-xl font-semibold text-foreground mb-4">
                   Événements du{" "}
-                  {selectedDate && format(selectedDate, "d MMMM yyyy", { locale: fr })}
+                  {selectedDate &&
+                    format(selectedDate, "d MMMM yyyy", { locale: fr })}
                 </h3>
                 <div className="space-y-4">
                   {selectedEvents.map((event) => (
