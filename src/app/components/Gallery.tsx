@@ -81,7 +81,7 @@ export default function Gallery() {
   };
 
   return (
-    <section id="galerie" className="py-24 bg-background" ref={ref}>
+    <section id="galerie" className="py-24 bg-background lg:px-30" ref={ref}>
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { MapPin, Phone, Mail, Clock, Send, Facebook } from "lucide-react";
+import { Send, Facebook } from "lucide-react";
 // import { Input } from "@/components/ui/input";
 // import { Textarea } from "@/components/ui/textarea";
 // import { Button } from "@/components/ui/button";
@@ -9,41 +9,10 @@ import { toast } from "sonner";
 
 // TikTok icon component
 const TikTokIcon = ({ className }: { className?: string }) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    className={className}
-  >
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
     <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
   </svg>
 );
-
-const contactInfo = [
-  {
-    icon: MapPin,
-    label: "Adresse",
-    value: "Agbalépédo en face du supermarché champion, Lomé, Togo",
-    href: null,
-  },
-  {
-    icon: Phone,
-    label: "Téléphone",
-    value: "+228 90 23 25 31",
-    href: "tel:+22890232531",
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    value: "contact@rccgdivinepresence.tg",
-    href: "mailto:contact@rccgdivinepresence.tg",
-  },
-  {
-    icon: Clock,
-    label: "Horaires du secrétariat",
-    value: "Lun - Ven: 9h00 - 17h00",
-    href: null,
-  },
-];
 
 const socialLinks = [
   {
@@ -78,7 +47,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background" ref={ref}>
+    <section id="contact" className="py-24 bg-background lg:px-30" ref={ref}>
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div
@@ -87,16 +56,16 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-accent font-medium tracking-widest text-sm mb-3">
+          <p className="text-[#e8ba30] font-medium tracking-widest text-sm mb-3">
             CONTACT
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
             Nous Contacter
           </h2>
-          <div className="w-20 h-1 bg-accent mx-auto rounded-full mb-6" />
+          <div className="w-20 h-1 bg-[#e8ba30] mx-auto rounded-full mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            N&apos;hésitez pas à nous contacter pour toute question ou demande de
-            prière. Nous sommes là pour vous accompagner.
+            N&apos;hésitez pas à nous contacter pour toute question ou demande
+            de prière. Nous sommes là pour vous accompagner.
           </p>
         </motion.div>
 
@@ -112,7 +81,12 @@ export default function Contact() {
             </h3>
 
             <div className="space-y-6 mb-8">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.4595283962162!2d1.1873040756112028!3d6.202951310806843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10215901ef170345%3A0xc585028868afe4e9!2s%C3%89glise%20Chr%C3%A9tienne%20Rachet%C3%A9e%20de%20Dieu!5e0!3m2!1sfr!2stg!4v1768580182105!5m2!1sfr!2stg" width="600" height="450" loading="lazy"></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.4595283962162!2d1.1873040756112028!3d6.202951310806843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10215901ef170345%3A0xc585028868afe4e9!2s%C3%89glise%20Chr%C3%A9tienne%20Rachet%C3%A9e%20de%20Dieu!5e0!3m2!1sfr!2stg!4v1768580182105!5m2!1sfr!2stg"
+                width="600"
+                height="450"
+                loading="lazy"
+              ></iframe>
             </div>
 
             {/* Social Links */}
@@ -167,7 +141,7 @@ export default function Contact() {
                       type="text"
                       required
                       placeholder="Votre nom"
-                      className="bg-secondary/50"
+                      className="w-full bg-secondary/50 border border-border rounded-lg px-4 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-[#e8ba30] focus:border-[#e8ba30] transition-all"
                     />
                   </div>
                   <div>
@@ -183,7 +157,7 @@ export default function Contact() {
                       type="email"
                       required
                       placeholder="votre@email.com"
-                      className="bg-secondary/50"
+                      className="w-full bg-secondary/50 border border-border rounded-lg px-4 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-[#e8ba30] focus:border-[#e8ba30] transition-all"
                     />
                   </div>
                 </div>
@@ -217,7 +191,7 @@ export default function Contact() {
                     type="text"
                     required
                     placeholder="Sujet de votre message"
-                    className="bg-secondary/50"
+                    className="w-full bg-secondary/50 border border-border rounded-lg px-4 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-[#e8ba30] focus:border-[#e8ba30] transition-all"
                   />
                 </div>
 
@@ -234,14 +208,14 @@ export default function Contact() {
                     required
                     placeholder="Votre message..."
                     rows={5}
-                    className="bg-secondary/50 resize-none"
+                    className="w-full bg-secondary/50 border border-border rounded-lg px-4 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-[#e8ba30] focus:border-[#e8ba30] transition-all resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#3e27a1] hover:bg-[#3e27a1]/90 text-[#3e27a1]-foreground"
+                  className="w-full bg-[#3e27a1] hover:bg-[#3e27a1]/90 text-[#fff] border border-[#3e27a1] flex items-center justify-center py-3 rounded-2xl"
                 >
                   {isSubmitting ? (
                     "Envoi en cours..."

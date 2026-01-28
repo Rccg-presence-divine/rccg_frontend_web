@@ -88,10 +88,10 @@ const announcements = [
 ];
 
 const typeColors = {
-  culte: "bg-[#3e27a1] text-[#3e27a1]-foreground",
-  conference: "bg-accent text-accent-foreground",
+  culte: "bg-[#3e27a1] text-white",
+  conference: "bg-[#3e27a1] text-white",
   jeunesse: "bg-celestial-blue text-white",
-  priere: "bg-divine-gold text-foreground",
+  priere: "bg-divine-gold text-white",
 };
 
 const typeLabels = {
@@ -112,7 +112,7 @@ export default function Events() {
     : [];
 
   return (
-    <section id="evenements" className="py-24 bg-background" ref={ref}>
+    <section id="evenements" className="py-24 bg-background lg:px-30" ref={ref}>
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div
@@ -121,13 +121,13 @@ export default function Events() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-accent font-medium tracking-widest text-sm mb-3">
+          <p className="text-[#e8ba30] font-medium tracking-widest text-sm mb-3">
             CALENDRIER
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
             Événements & Annonces
           </h2>
-          <div className="w-20 h-1 bg-accent mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-[#e8ba30] mx-auto rounded-full" />
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -165,7 +165,7 @@ export default function Events() {
                 />
                 <div className="mt-4 pt-4 border-t border-border">
                   <p className="text-sm text-muted-foreground flex items-center gap-2">
-                    <span className="w-3 h-3 rounded-full bg-accent" />
+                    <span className="w-3 h-3 rounded-full bg-[#e8ba30]" />
                     Jours avec événements
                   </p>
                 </div>
@@ -194,7 +194,7 @@ export default function Events() {
                           {announcement.title}
                         </h4>
                         {announcement.urgent && (
-                          <Badge variant="destructive" className="text-xs">
+                          <Badge variant="destructive" className="text-xs text-white ">
                             Urgent
                           </Badge>
                         )}

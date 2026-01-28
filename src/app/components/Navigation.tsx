@@ -10,7 +10,7 @@ const navLinks = [
   { href: "#apropos", label: "À propos" },
   { href: "#evenements", label: "Événements" },
   { href: "#temoignages", label: "Témoignages" },
-  { href: "#galerie", label: "Galerie" },
+  // { href: "#galerie", label: "Galerie" },
   { href: "#offrandes", label: "Offrandes" },
   { href: "#contact", label: "Contact" },
 ];
@@ -24,7 +24,7 @@ export default function Navigation() {
       setScrolled(window.scrollY > 50);
     };
     handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive : true});
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -32,10 +32,11 @@ export default function Navigation() {
     const element = document.querySelector(href);
     if (element) {
       const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({
         top: elementPosition - offset,
-        behavior:"smooth"
+        behavior: "smooth",
       });
     }
     setIsOpen(false);
@@ -51,7 +52,7 @@ export default function Navigation() {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 lg:px-30">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.a
@@ -70,9 +71,10 @@ export default function Navigation() {
                 width={100}
                 height={40}
               />
-              
             </div>
-            <span className="text-lg font-bold text-[#3e27a1]">RCCG PRESENCE DIVINE</span>
+            <span className="text-lg font-bold text-[#3e27a1]">
+              RCCG PRESENCE DIVINE
+            </span>
           </motion.a>
 
           {/* Desktop Navigation */}

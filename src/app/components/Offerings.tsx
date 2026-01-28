@@ -39,7 +39,7 @@ export default function Offerings() {
   };
 
   return (
-    <section id="offrandes" className="py-24 bg-secondary/30" ref={ref}>
+    <section id="offrandes" className="py-24 bg-secondary/30 lg:px-30" ref={ref}>
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div
@@ -63,14 +63,14 @@ export default function Offerings() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-card rounded-2xl p-8 shadow-divine mb-12 text-center"
+            className="bg-card rounded-2xl p-8 shadow-divine mb-12 text-center "
           >
-            <Heart className="w-10 h-10 text-accent mx-auto mb-4" />
+            <Heart className="w-10 h-10 text-[#e8ba30] mx-auto mb-4" />
             <p className="font-display text-xl md:text-2xl italic text-foreground/90 mb-3">
               &quot;Que chacun donne comme il l&apos;a résolu en son cœur, sans tristesse
               ni contrainte; car Dieu aime celui qui donne avec joie.&quot;
             </p>
-            <p className="text-accent font-medium">— 2 Corinthiens 9:7</p>
+            <p className="text-[#e8ba30] font-medium">— 2 Corinthiens 9:7</p>
           </motion.div>
 
           {/* Explanation */}

@@ -43,7 +43,7 @@ export default function Testimonials() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="temoignages" className="py-24 bg-secondary/30" ref={ref}>
+    <section id="temoignages" className="py-24 bg-secondary/30 lg:px-30" ref={ref}>
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div
@@ -52,13 +52,13 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-accent font-medium tracking-widest text-sm mb-3">
+          <p className="text-[#e8ba30] font-medium tracking-widest text-sm mb-3">
             TÉMOIGNAGES
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
             Vies Transformées
           </h2>
-          <div className="w-20 h-1 bg-accent mx-auto rounded-full mb-6" />
+          <div className="w-20 h-1 bg-[#e8ba30] mx-auto rounded-full mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Découvrez les témoignages de nos frères et sœurs qui ont expérimenté
             la puissance de Dieu dans leur vie.
@@ -85,7 +85,7 @@ export default function Testimonials() {
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className="w-4 h-4 fill-accent text-accent"
+                    className="w-4 h-4 fill-accent text-[#e8ba30]"
                   />
                 ))}
               </div>
@@ -127,7 +127,7 @@ export default function Testimonials() {
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#3e27a1] text-[#3e27a1]-foreground rounded-full font-medium hover:bg-[#3e27a1]/90 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#3e27a1] text-[#fff] rounded-full font-medium hover:bg-[#3e27a1]/90 transition-colors"
           >
             Partagez votre témoignage
           </a>

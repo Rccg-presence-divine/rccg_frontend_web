@@ -36,7 +36,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-foreground text-background/90 py-16">
+    <footer className="bg-foreground text-background/90 py-16 lg:px-30">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Church Info */}
