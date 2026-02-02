@@ -24,7 +24,7 @@ const socialLinks = [
   {
     icon: TikTokIcon,
     label: "TikTok",
-    href: "https://tiktok.com/",
+    href: "https://tiktok.com/@rccg.presencedivine.togo",
     color: "hover:bg-black",
   },
 ];

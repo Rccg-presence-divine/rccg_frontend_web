@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Heart, Facebook } from "lucide-react";
+import { Facebook } from "lucide-react";
 import Image from "next/image";
 // TikTok icon component
 const TikTokIcon = ({ className }: { className?: string }) => (
@@ -19,8 +19,8 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-  { icon: TikTokIcon, href: "https://tiktok.com", label: "TikTok" },
+  { icon: Facebook, href: "https://facebook.com/rccgpd", label: "Facebook" },
+  { icon: TikTokIcon, href: "https://tiktok.com/@rccg.presencedivine.togo", label: "TikTok" },
 ];
 
 export default function Footer() {

@@ -18,39 +18,45 @@ interface Event {
   type: "culte" | "conference" | "priere";
 }
 
+// Générer les 30 jours du programme de jeûne et prières (1er février - 2 mars 2026)
+const generateFastingProgram = (): Event[] => {
+  const events: Event[] = [];
+
+  // Février: jours 1 à 28
+  for (let i = 1; i <= 28; i++) {
+    events.push({
+      id: i,
+      title: `Jour ${i} - Programme de jeûne et prières annuel`,
+      date: new Date(2026, 1, i),
+      time: "06h00 - 18h00",
+      location: "Église RCCG Divine Presence",
+      description:
+        "Programme annuel de jeûne et prières. Rejoignez-nous pour cette période de consécration et de recherche de la face de Dieu.",
+      type: "priere" as const,
+    });
+  }
+
+  // Mars: jours 1 et 2 (jours 29 et 30 du programme)
+  for (let i = 1; i <= 2; i++) {
+    events.push({
+      id: 28 + i,
+      title: `Jour ${28 + i} - Programme de jeûne et prières annuel`,
+      date: new Date(2026, 2, i),
+      time: "06h00 - 18h00",
+      location: "Église RCCG Divine Presence",
+      description:
+        "Programme annuel de jeûne et prières. Rejoignez-nous pour cette période de consécration et de recherche de la face de Dieu.",
+      type: "priere" as const,
+    });
+  }
+
+  return events;
+};
+
 const events: Event[] = [
+  ...generateFastingProgram(),
   {
-    id: 1,
-    title: "Convention Annuelle",
-    date: new Date(2026, 1, 15),
-    time: "09h00 - 18h00",
-    location: "Église RCCG Divine Presence",
-    description:
-      "Grande convention annuelle avec des invités spéciaux. Venez vivre une expérience spirituelle transformatrice.",
-    type: "conference",
-  },
-  {
-    id: 2,
-    title: "Nuit de Louange",
-    date: new Date(2026, 1, 20),
-    time: "21h00 - 05h00",
-    location: "Église RCCG Divine Presence",
-    description:
-      "Une nuit entière dédiée à la louange et à l'adoration. Venez célébrer la gloire de Dieu.",
-    type: "priere",
-  },
-  {
-    id: 3,
-    title: "Camp des Jeunes",
-    date: new Date(2026, 1, 25),
-    time: "08h00 - 18h00",
-    location: "Centre de retraite",
-    description:
-      "Un week-end de retraite spirituelle pour les jeunes de l'église. Enseignements, jeux et communion fraternelle.",
-    type: "conference",
-  },
-  {
-    id: 4,
+    id: 31,
     title: "Culte Spécial de Pâques",
     date: new Date(2026, 3, 5),
     time: "09h00 - 13h00",
@@ -58,16 +64,6 @@ const events: Event[] = [
     description:
       "Célébration de la résurrection de notre Seigneur Jésus-Christ avec un culte spécial.",
     type: "culte",
-  },
-  {
-    id: 5,
-    title: "Séminaire pour les Couples",
-    date: new Date(2026, 2, 14),
-    time: "14h00 - 18h00",
-    location: "Église RCCG Divine Presence",
-    description:
-      "Un séminaire enrichissant pour fortifier les mariages et les relations.",
-    type: "conference",
   },
 ];
 
@@ -85,14 +81,7 @@ const announcements = [
     description:
       "La chorale recrute de nouvelles voix. Contactez le responsable après le culte du dimanche.",
     urgent: false,
-  },
-  {
-    id: 3,
-    title: "Action sociale",
-    description:
-      "Collecte de vêtements et denrées alimentaires pour les familles nécessiteuses. Apportez vos dons au secrétariat.",
-    urgent: false,
-  },
+  }
 ];
 
 const typeColors = {
@@ -164,13 +153,6 @@ export default function Events() {
                   className="rounded-md w-full"
                   modifiers={{
                     hasEvent: eventDates,
-                  }}
-                  modifiersStyles={{
-                    hasEvent: {
-                      backgroundColor: "hsl(var(--accent))",
-                      color: "hsl(var(--accent-foreground))",
-                      fontWeight: "bold",
-                    },
                   }}
                 />
                 <div className="mt-4 pt-4 border-t border-border">

@@ -1,17 +1,7 @@
-import { useEffect, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 
 export default function DoveAnimation() {
   const { scrollYProgress } = useScroll();
-  const [windowHeight, setWindowHeight] = useState(() =>
-    typeof window !== "undefined" ? window.innerHeight : 0
-  );
-
-  useEffect(() => {
-    const handleResize = () => setWindowHeight(window.innerHeight);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   // Shadow expansion based on scroll - more intense progression
   const shadowScale = useTransform(scrollYProgress, [0, 1], [1, 25]);
@@ -278,7 +268,7 @@ export default function DoveAnimation() {
 // Component for individual progressive ray with fixed 45° angle
 interface ProgressiveRayProps {
   angle: number;
-  rayLengthProgress: any;
+  rayLengthProgress: MotionValue<number>;
 }
 
 function ProgressiveRay({ angle, rayLengthProgress }: ProgressiveRayProps) {
