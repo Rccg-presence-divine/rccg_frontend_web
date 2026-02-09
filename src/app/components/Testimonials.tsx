@@ -43,19 +43,19 @@ export default function Testimonials() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="temoignages" className="py-24 bg-secondary/30 lg:px-30" ref={ref}>
+    <section id="temoignages" className="py-12 sm:py-24 bg-secondary/30 lg:px-30" ref={ref}>
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <p className="text-[#e8ba30] font-medium tracking-widest text-sm mb-3">
             TÉMOIGNAGES
           </p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Vies Transformées
           </h2>
           <div className="w-20 h-1 bg-[#e8ba30] mx-auto rounded-full mb-6" />
@@ -73,7 +73,7 @@ export default function Testimonials() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-              className="bg-card rounded-2xl p-6 lg:p-8 shadow-divine relative overflow-hidden group hover:shadow-lg transition-shadow"
+              className="bg-card rounded-2xl p-4 sm:p-6 lg:p-8 shadow-divine relative overflow-hidden group hover:shadow-lg transition-shadow"
             >
               {/* Quote icon background */}
               <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -96,8 +96,8 @@ export default function Testimonials() {
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#3e27a1]/10 flex items-center justify-center">
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-full bg-[#3e27a1]/10 flex items-center justify-center">
                   <span className="text-lg font-display font-bold text-[#3e27a1]">
                     {testimonial.name.charAt(0)}
                   </span>
@@ -127,7 +127,7 @@ export default function Testimonials() {
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#3e27a1] text-[#fff] rounded-full font-medium hover:bg-[#3e27a1]/90 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#3e27a1] text-white rounded-full font-medium hover:bg-[#3e27a1]/90 transition-colors"
           >
             Partagez votre témoignage
           </a>

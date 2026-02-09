@@ -32,9 +32,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#1f1351] text-white py-16 lg:px-30">
+    <footer className="bg-[#1f1351] text-white py-10 sm:py-16 lg:px-30">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12 mb-8 sm:mb-12">
           {/* Church Info */}
           <div>
             <div className="flex items-center gap-3 mb-4">
@@ -47,14 +47,14 @@ export default function Footer() {
                 />
               </div>
               <div>
-                <h3 className="font-display text-xl font-semibold text-background">
-                  RCCG Divine Presence
+                <h3 className="font-display text-lg sm:text-xl font-semibold text-background">
+                  ECRD Présence Divine
                 </h3>
                 <p className="text-sm text-background/60">Lomé, Togo</p>
               </div>
             </div>
             <p className="text-background/70 text-sm leading-relaxed mb-4">
-              Redeemed Christian Church of God - Une église où la présence
+              Eglise Chrétienne Rachetée de Dieu - Une église où la présence
               divine transforme les vies et où chacun est le bienvenu.
             </p>
             <div className="flex gap-3">

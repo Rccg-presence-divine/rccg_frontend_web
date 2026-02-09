@@ -47,19 +47,19 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background lg:px-30" ref={ref}>
+    <section id="contact" className="py-12 sm:py-24 bg-background lg:px-30" ref={ref}>
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <p className="text-[#e8ba30] font-medium tracking-widest text-sm mb-3">
             CONTACT
           </p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Nous Contacter
           </h2>
           <div className="w-20 h-1 bg-[#e8ba30] mx-auto rounded-full mb-6" />
@@ -69,7 +69,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -80,13 +80,14 @@ export default function Contact() {
               Notre localisation
             </h3>
 
-            <div className="space-y-6 mb-8">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.4595283962162!2d1.1873040756112028!3d6.202951310806843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10215901ef170345%3A0xc585028868afe4e9!2s%C3%89glise%20Chr%C3%A9tienne%20Rachet%C3%A9e%20de%20Dieu!5e0!3m2!1sfr!2stg!4v1768580182105!5m2!1sfr!2stg"
-                width="600"
-                height="450"
-                loading="lazy"
-              ></iframe>
+            <div className="mb-8">
+              <div className="relative w-full aspect-4/3 rounded-xl overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.4595283962162!2d1.1873040756112028!3d6.202951310806843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10215901ef170345%3A0xc585028868afe4e9!2s%C3%89glise%20Chr%C3%A9tienne%20Rachet%C3%A9e%20de%20Dieu!5e0!3m2!1sfr!2stg!4v1768580182105!5m2!1sfr!2stg"
+                  className="absolute inset-0 w-full h-full border-0"
+                  loading="lazy"
+                ></iframe>
+              </div>
             </div>
 
             {/* Social Links */}
@@ -121,7 +122,7 @@ export default function Contact() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <div className="bg-card rounded-2xl p-8 shadow-divine">
+            <div className="bg-card rounded-2xl p-5 sm:p-8 shadow-divine">
               <h3 className="font-display text-2xl font-semibold text-foreground mb-6">
                 Envoyez-nous un message
               </h3>
@@ -215,7 +216,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#3e27a1] hover:bg-[#3e27a1]/90 text-[#fff] border border-[#3e27a1] flex items-center justify-center py-3 rounded-2xl"
+                  className="w-full bg-[#3e27a1] hover:bg-[#3e27a1]/90 text-white border border-[#3e27a1] flex items-center justify-center py-3 rounded-2xl"
                 >
                   {isSubmitting ? (
                     "Envoi en cours..."

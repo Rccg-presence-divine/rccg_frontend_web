@@ -72,7 +72,7 @@ export default function Navigation() {
                 height={40}
               />
             </div>
-            <span className="text-lg font-bold text-[#3e27a1]">
+            <span className="text-sm sm:text-lg font-bold text-[#3e27a1] truncate max-w-[140px] sm:max-w-none">
               RCCG PRESENCE DIVINE
             </span>
           </motion.a>

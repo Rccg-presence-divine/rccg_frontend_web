@@ -37,7 +37,7 @@ export default function Hero() {
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{ duration: 0.6, type: "spring" }}
-            className="w-16 h-16 mx-auto mb-8 text-accent"
+            className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-6 sm:mb-8 text-accent"
           >
             <svg
               viewBox="0 0 24 24"
@@ -61,10 +61,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6"
+            className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-4 sm:mb-6"
           >
-            RCCG
-            <span className="block text-[#3e27a1]">Divine Presence</span>
+            l&apos;ECRD
+            <span className="block text-[#3e27a1]">Présence Divine</span>
           </motion.h1>
 
           <motion.p
@@ -73,20 +73,19 @@ export default function Hero() {
             transition={{ delay: 0.6 }}
             className="text-lg md:text-xl text-muted-foreground mb-4 font-light"
           >
-            Redeemed Christian Church of God
+            Eglise Chrétienne Rachetée de Dieu
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 max-w-2xl mx-auto mb-8 shadow-divine"
+            className="bg-card/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 max-w-2xl mx-auto mb-8 shadow-divine"
           >
-            <p className="font-display text-xl md:text-2xl italic text-foreground/90 mb-2">
-              &quot;Car là où deux ou trois sont assemblés en mon nom, je suis
-              au milieu d&apos;eux.&quot;
+            <p className="font-display text-lg sm:text-xl md:text-2xl italic text-foreground/90 mb-2">
+              &quot;Jésus Christ est le même hier, aujourd&apos;hui et éternellement.&quot;
             </p>
-            <p className="text-[#e8ba30] font-medium">— Matthieu 18:20</p>
+            <p className="text-[#e8ba30] font-medium">— Hébreux 13:8</p>
           </motion.div>
         </motion.div>
       </div>

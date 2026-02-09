@@ -47,7 +47,7 @@ export default function DoveAnimation() {
           >
             {/* Main shadow - radial gradient expanding downward */}
             <div
-              className="relative w-[400px] h-[800px]"
+              className="relative w-[200px] h-[400px] sm:w-[400px] sm:h-[800px]"
               style={{
                 background: `radial-gradient(ellipse 100% 120% at 50% 0%, 
                   hsl(45, 90%, 55% / 0.4) 0%, 
@@ -71,11 +71,11 @@ export default function DoveAnimation() {
           }}
         >
           <svg
-            width="100vw"
-            height="100vh"
+            width="100%"
+            height="100%"
             viewBox="0 0 1200 1800"
-            className="absolute top-0 left-1/2 -translate-x-1/2"
-            style={{ overflow: "visible", maxWidth: "100vw" }}
+            className="absolute inset-0 w-full h-full"
+            style={{ overflow: "visible" }}
             preserveAspectRatio="xMidYMin slice"
           >
             <defs>

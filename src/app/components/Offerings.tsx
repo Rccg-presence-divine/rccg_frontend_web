@@ -39,19 +39,19 @@ export default function Offerings() {
   };
 
   return (
-    <section id="offrandes" className="py-24 bg-secondary/30 lg:px-30" ref={ref}>
+    <section id="offrandes" className="py-12 sm:py-24 bg-secondary/30 lg:px-30" ref={ref}>
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <p className="text-accent font-medium tracking-widest text-sm mb-3">
             OFFRANDES
           </p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Donner avec Joie
           </h2>
           <div className="w-20 h-1 bg-accent mx-auto rounded-full mb-6" />
@@ -63,10 +63,10 @@ export default function Offerings() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-card rounded-2xl p-8 shadow-divine mb-12 text-center "
+            className="bg-card rounded-2xl p-5 sm:p-8 shadow-divine mb-8 sm:mb-12 text-center"
           >
             <Heart className="w-10 h-10 text-[#e8ba30] mx-auto mb-4" />
-            <p className="font-display text-xl md:text-2xl italic text-foreground/90 mb-3">
+            <p className="font-display text-lg sm:text-xl md:text-2xl italic text-foreground/90 mb-3">
               &quot;Que chacun donne comme il l&apos;a résolu en son cœur, sans tristesse
               ni contrainte; car Dieu aime celui qui donne avec joie.&quot;
             </p>
@@ -106,7 +106,7 @@ export default function Offerings() {
                   initial={{ opacity: 0, x: index === 0 ? -20 : 20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                  className="bg-card rounded-xl p-6 shadow-divine border border-border hover:border-[#3e27a1]/30 transition-colors"
+                  className="bg-card rounded-xl p-4 sm:p-6 shadow-divine border border-border hover:border-[#3e27a1]/30 transition-colors"
                 >
                   <div
                     className={`w-12 h-12 rounded-full bg-linear-to-br ${item.color} flex items-center justify-center mb-4`}
@@ -117,7 +117,7 @@ export default function Offerings() {
                     {item.provider}
                   </p>
                   <div className="flex items-center justify-between gap-2">
-                    <p className="font-mono text-lg font-semibold text-foreground">
+                    <p className="font-mono text-sm sm:text-lg font-semibold text-foreground break-all sm:break-normal">
                       {item.number}
                     </p>
                     <button

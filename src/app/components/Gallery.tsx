@@ -81,19 +81,19 @@ export default function Gallery() {
   };
 
   return (
-    <section id="galerie" className="py-24 bg-background lg:px-30" ref={ref}>
+    <section id="galerie" className="py-12 sm:py-24 bg-background lg:px-30" ref={ref}>
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <p className="text-accent font-medium tracking-widest text-sm mb-3">
             GALERIE
           </p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Moments Précieux
           </h2>
           <div className="w-20 h-1 bg-accent mx-auto rounded-full mb-6" />
@@ -104,7 +104,7 @@ export default function Gallery() {
         </motion.div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 lg:gap-6">
           {galleryItems.map((item, index) => (
             <motion.div
               key={item.id}
@@ -161,9 +161,9 @@ export default function Gallery() {
               e.stopPropagation();
               goToPrevious();
             }}
-            className="absolute left-4 p-2 text-white/80 hover:text-white transition-colors"
+            className="absolute left-2 sm:left-4 p-2 text-white/80 hover:text-white transition-colors z-10"
           >
-            <ChevronLeft className="w-10 h-10" />
+            <ChevronLeft className="w-8 h-8 sm:w-10 sm:h-10" />
           </button>
 
           <button
@@ -171,24 +171,24 @@ export default function Gallery() {
               e.stopPropagation();
               goToNext();
             }}
-            className="absolute right-4 p-2 text-white/80 hover:text-white transition-colors"
+            className="absolute right-2 sm:right-4 p-2 text-white/80 hover:text-white transition-colors z-10"
           >
-            <ChevronRight className="w-10 h-10" />
+            <ChevronRight className="w-8 h-8 sm:w-10 sm:h-10" />
           </button>
 
           {/* Image */}
           <div
-            className="max-w-4xl w-full aspect-video bg-card rounded-xl flex items-center justify-center"
+            className="max-w-4xl w-full mx-8 sm:mx-16 aspect-video bg-card rounded-xl flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="text-center">
-              <Image className="w-20 h-20 text-muted-foreground mx-auto mb-4" src={galleryItems[selectedIndex].image}
+            <div className="text-center p-4">
+              <Image className="w-16 h-16 sm:w-20 sm:h-20 text-muted-foreground mx-auto mb-4" src={galleryItems[selectedIndex].image}
               alt={galleryItems[selectedIndex].description}
                width={300} height={300}/>
-              <p className="text-foreground font-display text-2xl">
+              <p className="text-foreground font-display text-xl sm:text-2xl">
                 {galleryItems[selectedIndex].title}
               </p>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-sm sm:text-base">
                 {galleryItems[selectedIndex].description}
               </p>
             </div>

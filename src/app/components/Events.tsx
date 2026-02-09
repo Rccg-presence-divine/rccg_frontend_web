@@ -111,25 +111,25 @@ export default function Events() {
     : [];
 
   return (
-    <section id="evenements" className="py-24 bg-background lg:px-30" ref={ref}>
+    <section id="evenements" className="py-12 sm:py-24 bg-background lg:px-30" ref={ref}>
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <p className="text-[#e8ba30] font-medium tracking-widest text-sm mb-3">
             CALENDRIER
           </p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Événements & Annonces
           </h2>
           <div className="w-20 h-1 bg-[#e8ba30] mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Calendar */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -221,13 +221,13 @@ export default function Events() {
                 <div className="space-y-4">
                   {selectedEvents.map((event) => (
                     <Card key={event.id} className="shadow-divine">
-                      <CardContent className="p-6">
+                      <CardContent className="p-4 sm:p-6">
                         <div className="flex items-start justify-between gap-4">
-                          <div>
+                          <div className="min-w-0">
                             <Badge className={typeColors[event.type]}>
                               {typeLabels[event.type]}
                             </Badge>
-                            <h4 className="font-display text-xl font-semibold text-foreground mt-2">
+                            <h4 className="font-display text-lg sm:text-xl font-semibold text-foreground mt-2">
                               {event.title}
                             </h4>
                             <div className="flex flex-wrap gap-4 mt-3 text-sm text-muted-foreground">
@@ -251,7 +251,7 @@ export default function Events() {
                 </div>
               </div>
             ) : selectedDate ? (
-              <div className="mb-8 p-8 text-center bg-secondary/30 rounded-2xl">
+              <div className="mb-8 p-5 sm:p-8 text-center bg-secondary/30 rounded-2xl">
                 <CalendarDays className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
                 <p className="text-muted-foreground">
                   Aucun événement prévu pour le{" "}
@@ -275,10 +275,10 @@ export default function Events() {
                     transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                   >
                     <Card className="shadow-divine hover:shadow-lg transition-shadow cursor-pointer group">
-                      <CardContent className="p-5">
-                        <div className="flex items-center gap-4">
-                          <div className="shrink-0 w-16 h-16 rounded-xl bg-[#3e27a1]/10 flex flex-col items-center justify-center">
-                            <span className="text-2xl font-bold text-[#3e27a1]">
+                      <CardContent className="p-3 sm:p-5">
+                        <div className="flex items-center gap-3 sm:gap-4">
+                          <div className="shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-[#3e27a1]/10 flex flex-col items-center justify-center">
+                            <span className="text-xl sm:text-2xl font-bold text-[#3e27a1]">
                               {format(event.date, "d")}
                             </span>
                             <span className="text-xs text-muted-foreground uppercase">
